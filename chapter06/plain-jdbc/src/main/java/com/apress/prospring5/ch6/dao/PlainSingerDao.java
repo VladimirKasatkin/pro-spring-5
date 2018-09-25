@@ -23,7 +23,7 @@ public class PlainSingerDao implements SingerDao {
 
 	private Connection getConnection() throws SQLException {
 		return DriverManager.getConnection(
-				"jdbc:mysql://localhost:3306/MUSICDB?useSSL=false&allowPublicKeyRetrieval=true",
+				"jdbc:mysql://localhost:3306/musicdb?useSSL=false&allowPublicKeyRetrieval=true",
 				"prospring5", "prospring5");
 	}
 
