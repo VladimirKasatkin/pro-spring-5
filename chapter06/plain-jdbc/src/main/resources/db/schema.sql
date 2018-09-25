@@ -1,19 +1,19 @@
-CREATE TABLE SINGER (
-       ID INT NOT NULL AUTO_INCREMENT
-     , FIRST_NAME VARCHAR(60) NOT NULL
-     , LAST_NAME VARCHAR(40) NOT NULL
-     , BIRTH_DATE DATE
-     , UNIQUE UQ_SINGER_1 (FIRST_NAME, LAST_NAME)
-     , PRIMARY KEY (ID)
+create table singer (
+       id int not null auto_increment
+     , first_name varchar(60) not null
+     , last_name varchar(40) not null
+     , birth_date date
+     , unique uq_singer_1 (first_name, last_name)
+     , primary key (id)
 );
 
-CREATE TABLE ALBUM (
-       ID INT NOT NULL AUTO_INCREMENT
-     , SINGER_ID INT NOT NULL
-     , TITLE VARCHAR(100) NOT NULL
-     , RELEASE_DATE DATE
-     , UNIQUE UQ_SINGER_ALBUM_1 (SINGER_ID, TITLE)
-     , PRIMARY KEY (ID)
-     , CONSTRAINT FK_ALBUM FOREIGN KEY (SINGER_ID)
-                  REFERENCES SINGER (ID)
+create table album (
+       id int not null auto_increment
+     , singer_id int not null
+     , title varchar(100) not null
+     , release_date date
+     , unique uq_singer_album_1 (singer_id, title)
+     , primary key (id)
+     , constraint fk_album foreign key (singer_id)
+                  references singer (id)
 );
